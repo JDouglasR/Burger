@@ -1,12 +1,12 @@
 const express = require("express");
-const burger = ("../models/burger.js");
+const burger = ("../models/burger");
 
-const router = express.Router();
+let router = express.Router();
 
 router.get("/", (req, res) => {
-    cat.all((data) => {
+    burger.all((data) => {
       let burgerObject = {
-        burger: data
+        burger_name: data
       };
       console.log(burgerObject);
       res.render("index", burgerObject);
@@ -15,9 +15,9 @@ router.get("/", (req, res) => {
   
   router.post("/api/burgers", (req, res) => {
     burger.create([
-      "name", "devoured"
+      "burger_name", "devoured"
     ], [
-      req.body.name, req.body.devoured
+      req.body.burger_name, req.body.devoured
     ], (result) => {
       // Send back the ID of the new quote
       res.json({ id: result.insertId });
