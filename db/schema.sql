@@ -7,5 +7,5 @@ USE burgers_db;
 CREATE TABLE burgers (
     id INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
     burger_name VARCHAR(30) NOT NULL,
-    devoured BOOLEAN NOT NULL DEFAULT false
+    isDevoured BOOLEAN NOT NULL DEFAULT false
 );
